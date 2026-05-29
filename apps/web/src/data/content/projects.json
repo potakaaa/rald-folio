@@ -1,0 +1,27 @@
+[
+  {
+    "title": "OpsBoard",
+    "description": "A focused dashboard for tracking team workflows, incidents, and product health signals.",
+    "stack": ["TanStack Start", "React", "TypeScript", "Tailwind"],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "github": "https://github.com/",
+    "demo": "https://example.com",
+    "featured": true
+  },
+  {
+    "title": "Studio Archive",
+    "description": "A gallery-first site for creative work, video embeds, process notes, and client case studies.",
+    "stack": ["React", "CMS", "Design Systems"],
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    "github": "https://github.com/",
+    "demo": "https://example.com"
+  },
+  {
+    "title": "Local Commerce Kit",
+    "description": "A lightweight storefront starter with reusable product cards, checkout flow, and admin-ready data.",
+    "stack": ["TypeScript", "Node", "PostgreSQL"],
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+    "github": "https://github.com/",
+    "demo": "https://example.com"
+  }
+]

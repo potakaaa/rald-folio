@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Frontend",
+    "items": ["React", "NextJS", "TanStack", "React Native", "Flutter", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    "title": "Backend",
+    "items": ["FastAPI", "Django", "Flask", "Express", "Node.js", "Hono", "Supabase", "Firebase"]
+  },
+  {
+    "title": "Database",
+    "items": ["PostgreSQL", "SQLite", "MySQL", "Drizzle", "Prisma", "SQLAlchemy"]
+  },
+  {
+    "title": "DevOps",
+    "items": ["AWS", "Vercel", "Docker", "GitHub Actions", "Linux", "Render"]
+  },
+  {
+    "title": "Tools",
+    "items": ["Figma", "Photoshop", "Canva", "VS Code", "Cursor", "Notion"]
+  }
+]

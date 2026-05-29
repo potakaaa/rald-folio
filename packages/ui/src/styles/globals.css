@@ -49,6 +49,10 @@
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
     --font-mono: 'JetBrains Mono Variable', monospace;
+    --spacing-page: var(--space-page);
+    --shadow-card: var(--shadow-card);
+    --shadow-card-hover: var(--shadow-card-hover);
+    --ease-standard: var(--ease-standard);
 }
 
 :root {
@@ -84,6 +88,10 @@
     --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
     --sidebar-border: oklch(0.92 0.004 286.32);
     --sidebar-ring: oklch(0.705 0.015 286.067);
+    --space-page: clamp(1rem, 2vw, 2rem);
+    --shadow-card: 0 1px 2px oklch(0.141 0.005 285.823 / 8%);
+    --shadow-card-hover: 0 10px 30px oklch(0.141 0.005 285.823 / 10%);
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 .dark {
@@ -118,16 +126,43 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.552 0.016 285.938);
+    --shadow-card: 0 1px 2px oklch(0 0 0 / 20%);
+    --shadow-card-hover: 0 16px 40px oklch(0 0 0 / 24%);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+    }
+  html.dark {
+    color-scheme: dark;
+    }
   * {
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-mono text-foreground antialiased;
+    }
+  a {
+    text-underline-offset: 4px;
     }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
+    }
+}
+
+@layer components {
+  [data-slot="card"] {
+    box-shadow: var(--shadow-card);
+    transition:
+      border-color 180ms var(--ease-standard),
+      background-color 180ms var(--ease-standard),
+      box-shadow 180ms var(--ease-standard),
+      transform 180ms var(--ease-standard);
+    }
+
+  [data-slot="card"]:hover {
+    box-shadow: var(--shadow-card-hover);
     }
 }

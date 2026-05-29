@@ -1,0 +1,22 @@
+[
+  {
+    "src": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+    "alt": "Laptop showing a code editor on a desk",
+    "caption": "Interface systems and build sessions"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    "alt": "Outdoor creative landscape",
+    "caption": "Photo studies and visual direction"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80",
+    "alt": "Architectural geometric facade",
+    "caption": "Composition, structure, and rhythm"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=900&q=80",
+    "alt": "Design work laid out on a table",
+    "caption": "Brand, layout, and content experiments"
+  }
+]

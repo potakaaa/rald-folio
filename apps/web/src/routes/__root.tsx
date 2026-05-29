@@ -1,6 +1,11 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
+import type { ReactNode } from "react"
 
 import appCss from "@workspace/ui/globals.css?url"
+
+const siteTitle = "Rald Helbiro | Developer / Creative Portfolio"
+const siteDescription =
+  "Minimal developer and creative portfolio for projects, tech stack, gallery, videos, posts, and contact."
 
 export const Route = createRootRoute({
   head: () => ({
@@ -13,7 +18,31 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: siteTitle,
+      },
+      {
+        name: "description",
+        content: siteDescription,
+      },
+      {
+        name: "author",
+        content: "Rald Helbiro",
+      },
+      {
+        property: "og:title",
+        content: siteTitle,
+      },
+      {
+        property: "og:description",
+        content: siteDescription,
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
     links: [
@@ -32,9 +61,9 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
