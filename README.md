@@ -96,8 +96,22 @@ Each image needs:
 - `src`
 - `alt`
 - `caption`
+- `orientation`: `landscape`, `portrait`, or `square`
 
-Use descriptive `alt` text for accessibility.
+Use descriptive `alt` text for accessibility. The orientation controls each image's size in the
+automatically packed bento grid.
+
+### Cloudinary Images
+
+Use full public Cloudinary delivery URLs in the existing `image` and `src` fields:
+
+```json
+{
+  "image": "https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v1234567890/portfolio/profile.jpg"
+}
+```
+
+The app automatically adds Cloudinary responsive width, automatic format, and automatic quality transformations for profile, project, and gallery images. No Cloudinary API key or secret is needed because the site only displays public delivery URLs. Non-Cloudinary image URLs continue to work unchanged.
 
 ### Videos
 

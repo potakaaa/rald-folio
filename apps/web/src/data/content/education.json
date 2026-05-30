@@ -1,8 +1,14 @@
 [
   {
     "title": "Computer Science",
-    "organization": "University Program",
+    "organization": "USTP - CDO",
     "period": "2018 - 2022",
-    "description": "Focused on software engineering, data structures, and human-centered interfaces."
+    "description": "Currently pursuing undergraduate studies with a strong focus on software development, algorithms, and web technologies."
+  },
+  {
+    "title": "TVL - Programming",
+    "organization": "PHINMA COC",
+    "period": "2018 - 2022",
+    "description": "Senior High graduate from the TVL – Programming strand, gaining hands-on experience in basic programming, web development, and application logic."
   }
 ]

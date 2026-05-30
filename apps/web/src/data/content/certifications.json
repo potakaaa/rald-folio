@@ -1,14 +1,56 @@
 [
   {
-    "title": "Responsive Web Design",
-    "organization": "Professional Certificate",
-    "period": "2024",
-    "description": "Accessibility, semantic HTML, layout systems, and responsive implementation."
+    "title": "Dean’s Lister",
+    "organization": "Academic Recognition",
+    "period": "2023 – Present",
+    "description": "Consistently recognized for outstanding academic performance."
   },
   {
-    "title": "Cloud Foundations",
-    "organization": "Professional Certificate",
+    "title": "Finalist, Innovate for Impact",
+    "organization": "AIT and UNEP",
+    "period": "2024",
+    "description": "Competed internationally to develop solutions addressing plastic pollution."
+  },
+  {
+    "title": "Winner, GDG Solutions Challenge",
+    "organization": "Google Developer Groups",
+    "period": "2024",
+    "description": "Recognized for an innovative tech solution in a regional competition."
+  },
+  {
+    "title": "Champion, Panagtigi 2-Minute Film",
+    "organization": "Panagtigi",
     "period": "2023",
-    "description": "Deployment basics, server operations, and production monitoring fundamentals."
+    "description": "Won first place in a short filmmaking competition."
+  },
+  {
+    "title": "Creatives Team Lead",
+    "organization": "Creative Team",
+    "period": "2024",
+    "description": "Led the creative team in planning and executing projects and events."
+  },
+  {
+    "title": "People’s Choice Award",
+    "organization": "Sinekasiya 6th Film Festival",
+    "period": "2024",
+    "description": "Recognized by the audience for the short film Limbong."
+  },
+  {
+    "title": "Level 2, 11th TOPCIT Exam",
+    "organization": "TOPCIT",
+    "period": "2025",
+    "description": "Maintained Level 2 IT competency during second year undergraduate studies."
+  },
+  {
+    "title": "International Conference Presentation",
+    "organization": "IRCIP",
+    "period": "2025",
+    "description": "Presented research on graph-based routing for urban jeepney systems."
+  },
+  {
+    "title": "Participant, Sikaptala Hackathon",
+    "organization": "DLSU-D CICSSG",
+    "period": "2025",
+    "description": "Engaged in collaborative problem-solving and coding challenges."
   }
 ]

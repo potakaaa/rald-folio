@@ -43,6 +43,7 @@ export type GalleryImage = {
   src: string
   alt: string
   caption: string
+  orientation: "landscape" | "portrait" | "square"
 }
 
 export type Video = {
@@ -69,7 +70,7 @@ export const profile: Profile = profileJson
 export const socials: SocialLink[] = socialsJson
 export const projects: Project[] = projectsJson
 export const techStack: TechGroup[] = techStackJson
-export const gallery: GalleryImage[] = galleryJson
+export const gallery = galleryJson as GalleryImage[]
 export const videos: Video[] = videosJson
 export const experience: TimelineItem[] = experienceJson
 export const education: TimelineItem[] = educationJson

@@ -35,7 +35,8 @@ import {
   techStack,
   videos,
 } from "@/data/portfolio"
-import type { TimelineItem } from "@/data/portfolio"
+import type { GalleryImage, TimelineItem } from "@/data/portfolio"
+import { getCloudinaryImageUrl, getCloudinarySrcSet } from "@/lib/cloudinary"
 import { PostCard } from "./post-card"
 import { ThemeToggle } from "./theme-toggle"
 
@@ -66,6 +67,12 @@ function Section({ id, eyebrow, title, description, children }: SectionProps) {
   )
 }
 
+const galleryTileClasses: Record<GalleryImage["orientation"], string> = {
+  landscape: "col-span-2",
+  portrait: "row-span-2",
+  square: "",
+}
+
 function ExternalLink({
   href,
   children,
@@ -94,14 +101,14 @@ function TimelineGroup({
   items: TimelineItem[]
 }) {
   return (
-    <Card>
+    <Card className="max-h-[36rem]">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           {icon}
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5">
+      <CardContent className="min-h-0 space-y-5 overflow-y-auto overscroll-contain">
         {items.map((item) => (
           <div key={`${item.title}-${item.period}`} className="grid gap-1 border-l pl-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -166,18 +173,25 @@ export function PortfolioPage() {
 
           <Card className="bg-card/80">
             <img
-              src={profile.image}
+              src={getCloudinaryImageUrl(profile.image, 900)}
+              srcSet={getCloudinarySrcSet(profile.image, [480, 720, 900, 1200])}
+              sizes="(min-width: 1024px) 39vw, 100vw"
               alt={`${profile.name} portrait placeholder`}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] w-full object-cover object-[59%_center]"
+              fetchPriority="high"
             />
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
                 <Avatar size="lg">
-                  <AvatarImage src={profile.image} alt="" />
+                  <AvatarImage
+                    src={getCloudinaryImageUrl(profile.image, 96)}
+                    alt=""
+                    className="object-[56%_center]"
+                  />
                   <AvatarFallback>RH</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="text-sm font-medium">Available for focused builds</p>
+                  <p className="text-sm font-medium">Building with intent</p>
                   <p className="flex items-center gap-1 text-xs text-muted-foreground">
                     <IconMapPin className="size-3.5" />
                     {profile.location}
@@ -187,12 +201,12 @@ export function PortfolioPage() {
               <Separator />
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="border border-border p-3">
-                  <p className="text-muted-foreground">Mode</p>
-                  <p className="mt-1 font-medium">Design + Code</p>
+                  <p className="text-muted-foreground">Edge</p>
+                  <p className="mt-1 font-medium">Engineering + Taste</p>
                 </div>
                 <div className="border border-border p-3">
-                  <p className="text-muted-foreground">Style</p>
-                  <p className="mt-1 font-medium">Simple / Premium</p>
+                  <p className="text-muted-foreground">Output</p>
+                  <p className="mt-1 font-medium">Products That Feel Real</p>
                 </div>
               </div>
             </CardContent>
@@ -209,18 +223,18 @@ export function PortfolioPage() {
             {[
               {
                 icon: <IconCode className="size-5" />,
-                title: "Product Engineering",
-                text: "Practical web apps, dashboards, and interfaces built with typed, reusable systems.",
+                title: "Product Thinking",
+                text: "Interfaces shaped around real use, not just screenshots. Clear flows, useful features, and fewer moving parts.",
               },
               {
                 icon: <IconPalette className="size-5" />,
-                title: "Creative Direction",
-                text: "Brand-aware layouts, image systems, and content that feel intentional without excess.",
+                title: "Full-Stack Execution",
+                text: "From frontend polish to backend structure, I build systems that are practical, maintainable, and ready to grow.",
               },
               {
                 icon: <IconBriefcase className="size-5" />,
-                title: "Reliable Delivery",
-                text: "Clear scope, calm communication, and implementation choices that stay easy to maintain.",
+                title: "Creative Judgment",
+                text: "Visual direction, spacing, copy, and details that make a product feel more trusted from the first click.",
               },
             ].map((item) => (
               <Card key={item.title}>
@@ -248,9 +262,12 @@ export function PortfolioPage() {
             {projects.map((project) => (
               <Card key={project.title} className={project.featured ? "lg:col-span-2" : ""}>
                 <img
-                  src={project.image}
+                  src={getCloudinaryImageUrl(project.image, 900)}
+                  srcSet={getCloudinarySrcSet(project.image, [480, 720, 900, 1200])}
+                  sizes={project.featured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
                   alt={`${project.title} preview`}
                   className="aspect-video w-full object-cover"
+                  loading="lazy"
                 />
                 <CardHeader>
                   <div className="flex flex-wrap items-center gap-2">
@@ -313,14 +330,25 @@ export function PortfolioPage() {
           title="Gallery studies."
           description="Visual work that shows taste, composition, and the creative range I bring to product and brand experiences."
         >
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid auto-rows-[9rem] grid-cols-2 grid-flow-dense gap-3 sm:auto-rows-[12rem] lg:grid-cols-4 lg:auto-rows-[14rem]">
             {gallery.map((image) => (
-              <Card key={image.src}>
-                <img src={image.src} alt={image.alt} className="aspect-[4/5] w-full object-cover" />
-                <CardContent>
-                  <p className="text-xs leading-6 text-muted-foreground">{image.caption}</p>
-                </CardContent>
-              </Card>
+              <figure
+                key={image.src}
+                tabIndex={0}
+                className={`group relative min-h-0 overflow-hidden bg-muted outline-none ${galleryTileClasses[image.orientation]}`}
+              >
+                <img
+                  src={getCloudinaryImageUrl(image.src, 720)}
+                  srcSet={getCloudinarySrcSet(image.src, [320, 480, 720, 900])}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  alt={image.alt}
+                  className="size-full object-cover transition duration-500 ease-standard group-hover:scale-105 group-hover:blur-sm group-focus-visible:scale-105 group-focus-visible:blur-sm"
+                  loading="lazy"
+                />
+                <figcaption className="absolute inset-0 flex items-center justify-center bg-black/20 px-5 text-center text-sm font-medium text-white opacity-0 transition-opacity duration-300 ease-standard group-hover:opacity-100 group-focus-visible:opacity-100">
+                  {image.caption}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </Section>
