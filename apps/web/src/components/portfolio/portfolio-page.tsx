@@ -37,6 +37,7 @@ import {
 } from "@/data/portfolio"
 import type { GalleryImage, TimelineItem } from "@/data/portfolio"
 import { getCloudinaryImageUrl, getCloudinarySrcSet } from "@/lib/cloudinary"
+import { GitHubContributions } from "./github-contributions"
 import { PostCard } from "./post-card"
 import { ThemeToggle } from "./theme-toggle"
 
@@ -72,6 +73,11 @@ const galleryTileClasses: Record<GalleryImage["orientation"], string> = {
   portrait: "row-span-2",
   square: "",
 }
+
+const githubUsername =
+  socials
+    .find((social) => social.label === "GitHub")
+    ?.href.match(/github\.com\/([^/]+)/)?.[1] ?? "potakaaa"
 
 function ExternalLink({
   href,
@@ -134,7 +140,7 @@ export function PortfolioPage() {
               {profile.name}
             </a>
             <div className="hidden items-center gap-1 md:flex">
-              {["projects", "stack", "gallery", "posts", "contact"].map((item) => (
+              {["projects", "stack", "activity", "gallery", "posts", "contact"].map((item) => (
                 <Button key={item} asChild variant="ghost" size="sm">
                   <a href={`#${item}`}>{item}</a>
                 </Button>
@@ -322,6 +328,19 @@ export function PortfolioPage() {
               </Card>
             ))}
           </div>
+        </Section>
+
+        <Section
+          id="activity"
+          eyebrow="GitHub"
+          title="Contribution activity."
+          description="A live view of the consistency behind the work: experiments, shipped features, maintenance, and incremental progress."
+        >
+          <Card size="sm">
+            <CardContent>
+              <GitHubContributions username={githubUsername} />
+            </CardContent>
+          </Card>
         </Section>
 
         <Section
