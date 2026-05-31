@@ -223,17 +223,18 @@ To deploy from Git:
 
 1. Push the repository to GitHub, GitLab, Bitbucket, or Azure DevOps.
 2. In Netlify, select **Add new project** and import the repository.
-3. Leave the base directory unset so Netlify installs the pnpm workspace from the repository root.
-4. Confirm the build command is `pnpm --filter web build`.
-5. Confirm the publish directory is `apps/web/dist/client`.
+3. Set the package directory to `apps/web`.
+4. Leave the base directory unset so Netlify installs the pnpm workspace from the repository root.
+5. Confirm the build command is `pnpm --filter web build`.
+6. Confirm the publish directory is `apps/web/dist/client`.
 
 No environment variables are currently required. Cloudinary images use public delivery URLs.
 
 ### GitHub Actions CI/CD
 
 The `.github/workflows/ci-cd.yml` workflow runs type checking, linting, and the production build for
-pull requests and pushes to `main`. After a successful `main` build, it deploys the generated client
-assets and SSR function to Netlify.
+pull requests and pushes to `main`. After a successful `main` build, Netlify CLI runs its
+framework-aware production build and deploys the generated client assets and SSR function.
 
 Add these repository secrets in **GitHub > Settings > Secrets and variables > Actions**:
 

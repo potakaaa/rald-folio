@@ -48,10 +48,9 @@ jobs:
         run: >
           pnpm exec netlify deploy
           --prod
-          --no-build
+          --context production
+          --filter web
           --site "$NETLIFY_SITE_ID"
-          --dir apps/web/dist/client
-          --functions apps/web/.netlify/v1/functions
           --message "GitHub Actions deploy ${GITHUB_SHA}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
