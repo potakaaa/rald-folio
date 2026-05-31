@@ -15,20 +15,28 @@ import { Section } from "../shared/section"
 
 function ProjectDetails({ project }: { project: Project }) {
   return (
-    <>
-      <CardHeader>
-        <div className="flex flex-wrap items-center gap-2">
-          <CardTitle>{project.title}</CardTitle>
-          {project.featured ? <Badge>Featured</Badge> : null}
+    <div className="flex min-w-0 flex-1 flex-col gap-3">
+      <CardHeader className="gap-2">
+        <div className="flex items-start justify-between gap-3">
+          <CardTitle className="leading-5">{project.title}</CardTitle>
+          {project.featured ? (
+            <Badge className="shrink-0 text-[10px] tracking-[0.12em] uppercase">
+              Featured
+            </Badge>
+          ) : null}
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <p className="text-xs leading-6 text-muted-foreground">
+      <CardContent className="space-y-3">
+        <p className="text-xs leading-5 text-muted-foreground">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {project.stack.map((item) => (
-            <Badge key={item} variant="outline">
+            <Badge
+              key={item}
+              variant="outline"
+              className="px-1.5 py-0 text-[10px]"
+            >
               {item}
             </Badge>
           ))}
@@ -48,7 +56,7 @@ function ProjectDetails({ project }: { project: Project }) {
           </ExternalLink>
         ) : null}
       </CardFooter>
-    </>
+    </div>
   )
 }
 
@@ -64,43 +72,37 @@ export function ProjectsSection() {
         {projects.map((project) => (
           <Card
             key={project.title}
-            className={project.featured ? "lg:col-span-2" : ""}
+            size="sm"
+            className={
+              project.featured
+                ? "hover:-translate-y-1 lg:col-span-2 lg:flex-row lg:gap-0"
+                : "hover:-translate-y-1"
+            }
           >
-            {project.preview === "mobile" ? (
-              <>
-                <img
-                  src={getCloudinaryImageUrl(project.image, 900)}
-                  srcSet={getCloudinarySrcSet(
-                    project.image,
-                    [480, 720, 900, 1200]
-                  )}
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  alt={`${project.title} mobile app preview`}
-                  className="w-full object-contain transition duration-300 hover:scale-[1.02]"
-                  loading="lazy"
-                />
-                <ProjectDetails project={project} />
-              </>
-            ) : (
-              <>
-                <img
-                  src={getCloudinaryImageUrl(project.image, 900)}
-                  srcSet={getCloudinarySrcSet(
-                    project.image,
-                    [480, 720, 900, 1200]
-                  )}
-                  sizes={
-                    project.featured
-                      ? "(min-width: 1024px) 66vw, 100vw"
-                      : "(min-width: 1024px) 33vw, 100vw"
-                  }
-                  alt={`${project.title} preview`}
-                  className="aspect-video w-full object-cover"
-                  loading="lazy"
-                />
-                <ProjectDetails project={project} />
-              </>
-            )}
+            <div
+              className={`flex aspect-video items-center justify-center overflow-hidden border-b ${
+                project.featured
+                  ? "bg-muted/40 p-2 lg:aspect-auto lg:w-[54%] lg:shrink-0 lg:border-r lg:border-b-0"
+                  : "bg-muted/40 p-3"
+              }`}
+            >
+              <img
+                src={getCloudinaryImageUrl(project.image, 720)}
+                srcSet={getCloudinarySrcSet(
+                  project.image,
+                  [360, 540, 720, 900]
+                )}
+                sizes={
+                  project.featured
+                    ? "(min-width: 1024px) 36vw, 100vw"
+                    : "(min-width: 1024px) 33vw, 100vw"
+                }
+                alt={`${project.title}${project.preview === "mobile" ? " mobile app" : ""} preview`}
+                className="h-full w-full object-contain transition duration-300 ease-standard group-hover/card:scale-[1.035]"
+                loading="lazy"
+              />
+            </div>
+            <ProjectDetails project={project} />
           </Card>
         ))}
       </div>

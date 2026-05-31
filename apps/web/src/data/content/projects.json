@@ -28,7 +28,7 @@
   {
     "title": "Shortcut Showdown",
     "description": "Real-time typing battle game where players compete using keyboard shortcuts, combining speed, accuracy, and competitive learning in one interactive platform.",
-    "stack": ["NextJS", "FastAPI", "Vercel"],
+    "stack": ["NextJS", "FastAPI", "Realtime", "Vercel"],
     "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780214685/shortcut-showdown_ufpiwp.png",
     "github": "https://github.com/pwedesi/shortcut-showdown",
     "demo": "https://shortcut-showdown-shosho.vercel.app/",
