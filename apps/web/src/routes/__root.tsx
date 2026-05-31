@@ -2,6 +2,11 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import type { ReactNode } from "react"
 
 import appCss from "@workspace/ui/globals.css?url"
+import { initSentry } from "../lib/sentry"
+
+if (!import.meta.env.SSR) {
+  initSentry()
+}
 
 const siteTitle = "Rald Helbiro | Developer / Creative Portfolio"
 const siteDescription =
