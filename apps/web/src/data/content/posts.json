@@ -1,14 +1,17 @@
 [
   {
-    "id": "quiet-software",
-    "date": "2026-05-30",
-    "title": "Quiet software lasts longer",
-    "body": "The interfaces I keep returning to are rarely loud. They are fast, predictable, legible, and respectful of attention."
-  },
-  {
-    "id": "creative-systems",
-    "date": "2026-05-18",
-    "title": "Creative work benefits from systems",
-    "body": "A good system does not remove taste. It gives taste a stable place to show up repeatedly."
+  "id": "research-paper-milestone",
+  "date": "2026-05-02",
+  "title": "Research Published!",
+  "body": "Our research paper on flexible urban jeepney networks has been published in the Journal of Transport Geography. This started as a class project, but it grew into a real study about commuting, route inefficiencies, and how graph-based thinking can help represent transport problems better. I’m thankful to my co-authors and everyone who helped us reach this point. It feels special to see student work become something that can contribute to a real-world conversation."
   }
+  ,
+  {
+  "id": "platebook-recipe-hub",
+  "date": "2025-05-15",
+  "title": "What if recipes felt more social?",
+  "body": "Platebook was our take on a social recipe platform where people could discover, save, and interact around food ideas. We built it with Next.js and Django, with features like recipe lists, likes, comments, and a cooking assistant. It was fun seeing a simple idea turn into something that felt like a real product. What feature would make you actually use a recipe app: saving favorites, AI cooking help, or seeing what other people are cooking?"
+  }
+
+
 ]

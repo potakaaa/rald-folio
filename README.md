@@ -214,3 +214,31 @@ pnpm typecheck
 pnpm lint
 pnpm build
 ```
+
+## Deploy To Netlify
+
+This repository includes the Netlify TanStack Start Vite plugin and a root `netlify.toml`.
+
+To deploy from Git:
+
+1. Push the repository to GitHub, GitLab, Bitbucket, or Azure DevOps.
+2. In Netlify, select **Add new project** and import the repository.
+3. Leave the base directory unset so Netlify installs the pnpm workspace from the repository root.
+4. Confirm the build command is `pnpm --filter web build`.
+5. Confirm the publish directory is `apps/web/dist/client`.
+
+No environment variables are currently required. Cloudinary images use public delivery URLs.
+
+### GitHub Actions CI/CD
+
+The `.github/workflows/ci-cd.yml` workflow runs type checking, linting, and the production build for
+pull requests and pushes to `main`. After a successful `main` build, it deploys the generated client
+assets and SSR function to Netlify.
+
+Add these repository secrets in **GitHub > Settings > Secrets and variables > Actions**:
+
+- `NETLIFY_AUTH_TOKEN`: create a Netlify personal access token.
+- `NETLIFY_SITE_ID`: copy the project's ID from Netlify project configuration.
+
+If the repository is also connected directly to Netlify, disable Netlify's automatic Git builds so
+each push to `main` creates only one production deployment.
