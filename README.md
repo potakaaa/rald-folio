@@ -4,6 +4,11 @@ A minimal developer and creative portfolio built with TanStack Start, React, Typ
 
 ## Run Locally
 
+Requirements:
+
+- Node.js 20 or newer
+- pnpm 10
+
 ```bash
 pnpm install
 pnpm dev
@@ -55,6 +60,7 @@ Update `apps/web/src/data/content/profile.json` for the hero, about card, contac
 ### Social Links
 
 Update `apps/web/src/data/content/socials.json` for GitHub, LinkedIn, Facebook, Instagram, or any other links.
+The GitHub profile URL also supplies the username used by the contribution activity section.
 
 ```json
 [
@@ -167,13 +173,14 @@ Keep every `id` stable. Changing an ID resets local visitor support/comments for
 
 ## Update Section Copy
 
-Section titles and descriptions live in:
+Section titles and descriptions live in the section components under:
 
 ```txt
-apps/web/src/components/portfolio/portfolio-page.tsx
+apps/web/src/components/portfolio/sections/
 ```
 
-Search for `<Section` to edit copy like About, Projects, Stack, Gallery, Videos, Experience, Posts, and Contact.
+Search for `<Section` to edit copy like About, Experience, Projects, Stack, Activity, Gallery, Videos,
+Posts, and Contact. The hero copy comes from `apps/web/src/data/content/profile.json`.
 
 ## Theme And Styling
 
@@ -230,16 +237,8 @@ To deploy from Git:
 
 No environment variables are currently required. Cloudinary images use public delivery URLs.
 
-### GitHub Actions CI/CD
+### GitHub Actions CI
 
 The `.github/workflows/ci-cd.yml` workflow runs type checking, linting, and the production build for
-pull requests and pushes to `main`. After a successful `main` build, Netlify CLI runs its
-framework-aware production build and deploys the generated client assets and SSR function.
-
-Add these repository secrets in **GitHub > Settings > Secrets and variables > Actions**:
-
-- `NETLIFY_AUTH_TOKEN`: create a Netlify personal access token.
-- `NETLIFY_SITE_ID`: copy the project's ID from Netlify project configuration.
-
-If the repository is also connected directly to Netlify, disable Netlify's automatic Git builds so
-each push to `main` creates only one production deployment.
+pull requests and pushes to `main`. Netlify's Git integration automatically deploys pushes to `main`,
+so the GitHub Actions workflow does not deploy the site or require repository secrets.

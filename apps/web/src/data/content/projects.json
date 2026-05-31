@@ -1,27 +1,61 @@
 [
   {
-    "title": "OpsBoard",
-    "description": "A focused dashboard for tracking team workflows, incidents, and product health signals.",
-    "stack": ["TanStack Start", "React", "TypeScript", "Tailwind"],
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    "github": "https://github.com/",
-    "demo": "https://example.com",
+    "title": "Platebook",
+    "description": "A full-stack social platform for food lovers to share, save, and explore recipes. Features include recipe posting, liking, commenting, sharing, and an AI chatbot assistant.",
+    "stack": ["Next JS", "Tailwind", "ShadCN", "Django", "PostgreSQL", "Vercel", "AWS"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780213361/platebook_bbfggt.png",
+    "github": "https://github.com/potakaaa/platebook",
+    "demo": "https://platebook.vercel.app/",
     "featured": true
   },
   {
-    "title": "Studio Archive",
-    "description": "A gallery-first site for creative work, video embeds, process notes, and client case studies.",
-    "stack": ["React", "CMS", "Design Systems"],
-    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-    "github": "https://github.com/",
-    "demo": "https://example.com"
+    "title": "Jogaliga",
+    "description": "An all-in-one football app for organizing peladas, managing teams, booking courts, confirming attendance, and handling PIX payments easily in one place.",
+    "stack": ["Flutter", "Riverpod", "FastAPI", "PostgreSQL", "Docker", "AWS"],
+    "preview": "mobile",
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780213361/jogaliga_vtq61o.png",
+    "demo": "https://play.google.com/store/apps/details?id=com.jogaliga.jogaliga_frontend"
+  },
+  
+  {
+    "title": "AURA",
+    "description": "AURA is an ambient AI assistant that helps automate tasks, connect workflows, and provide smart support across apps through a simple and intelligent system.",
+    "stack": ["React Native", "Expo", "Supabase", "Express", "SQLite"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780213361/aura_tfwpti.png",
+    "github": "https://github.com/potakaaa/AURA",
+    "preview": "mobile"
   },
   {
-    "title": "Local Commerce Kit",
-    "description": "A lightweight storefront starter with reusable product cards, checkout flow, and admin-ready data.",
-    "stack": ["TypeScript", "Node", "PostgreSQL"],
-    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
-    "github": "https://github.com/",
-    "demo": "https://example.com"
+    "title": "Shortcut Showdown",
+    "description": "Real-time typing battle game where players compete using keyboard shortcuts, combining speed, accuracy, and competitive learning in one interactive platform.",
+    "stack": ["NextJS", "FastAPI", "Vercel"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780214685/shortcut-showdown_ufpiwp.png",
+    "github": "https://github.com/pwedesi/shortcut-showdown",
+    "demo": "https://shortcut-showdown-shosho.vercel.app/",
+    "featured": true
+  },
+  
+  {
+    "title": "USTEPALCO",
+    "description": "USTEPALCO is an electric billing system that helps USTP students easily view their electricity usage, manage billing details, and make payments without relying on paper bills or long lines.",
+    "stack": ["Python", "PyQt", "SQLite"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780213621/ustepalco_xprebd.png",
+    "github":"https://github.com/potakaaa/USTEPALCO"
+  },
+  {
+    "title": "Bamboost",
+    "description": "E-commerce platform for bamboo products, helping customers browse, discover, and purchase sustainable bamboo-based items through a clean and user-friendly online store.",
+    "stack": ["NextJS", "Laravel", "Docker", "AWS"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780213361/bamboost_powafd.png",
+    "demo": "https://bamboost.ph/",
+    "preview": "mobile"
+  },
+  {
+    "title": "Checktrade Medrep Monitoring",
+    "description": "USTEPALCO is an electric billing system that helps USTP students easily view their electricity usage, manage billing details, and make payments without relying on paper bills or long lines.",
+    "stack": ["NextJS", "Supabase"],
+    "image": "https://res.cloudinary.com/dcrojcirv/image/upload/q_auto/f_auto/v1780214429/checktrade_vrypmk.png",
+    "demo": "https://checktrade-medrep-monitoring.vercel.app/",
+    "github": "https://github.com/potakaaa/checktrade-medrep-monitoring"
   }
 ]

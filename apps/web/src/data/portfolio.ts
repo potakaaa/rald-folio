@@ -29,8 +29,9 @@ export type Project = {
   description: string
   stack: string[]
   image: string
-  github: string
-  demo: string
+  github?: string
+  demo?: string
+  preview?: "desktop" | "mobile"
   featured?: boolean
 }
 
@@ -68,7 +69,7 @@ export type Post = {
 
 export const profile: Profile = profileJson
 export const socials: SocialLink[] = socialsJson
-export const projects: Project[] = projectsJson
+export const projects = projectsJson as Project[]
 export const techStack: TechGroup[] = techStackJson
 export const gallery = galleryJson as GalleryImage[]
 export const videos: Video[] = videosJson
